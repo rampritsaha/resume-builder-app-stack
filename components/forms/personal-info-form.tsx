@@ -14,6 +14,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
+import { useResumeStore } from '@/lib/store';
 
 const personalInfoSchema = z.object({
   fullName: z.string().min(2, 'Name must be at least 2 characters'),
@@ -26,6 +27,7 @@ const personalInfoSchema = z.object({
 });
 
 export function PersonalInfoForm() {
+  const {setPersonalInfo} = useResumeStore()
   const form = useForm<z.infer<typeof personalInfoSchema>>({
     resolver: zodResolver(personalInfoSchema),
     defaultValues: {
@@ -38,7 +40,7 @@ export function PersonalInfoForm() {
   });
 
   function onSubmit(values: z.infer<typeof personalInfoSchema>) {
-    console.log(values);
+     setPersonalInfo(values)
   }
 
   return (

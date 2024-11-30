@@ -1,14 +1,14 @@
 'use client';
 
-import { useSearchParams, useRouter } from 'next/navigation';
-import { Card } from '@/components/ui/card';
-import { PersonalInfoForm } from '@/components/forms/personal-info-form';
-import { WorkExperienceForm } from '@/components/forms/work-experience-form';
 import { EducationForm } from '@/components/forms/education-form';
+import { PersonalInfoForm } from '@/components/forms/personal-info-form';
 import { SkillsForm } from '@/components/forms/skills-form';
-import { FileText } from 'lucide-react';
+import { WorkExperienceForm } from '@/components/forms/work-experience-form';
 import { ResumePreview } from '@/components/resume-preview';
+import { Card } from '@/components/ui/card';
+import { FileText } from 'lucide-react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 
 const sections = [
   { id: 'personal', label: 'Personal Info' },
